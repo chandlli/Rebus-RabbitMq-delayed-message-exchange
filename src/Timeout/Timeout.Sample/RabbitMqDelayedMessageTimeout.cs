@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Timeout.Sample
 {
-    public class DelayedMessageExchangeTimeout : ITimeoutManager
+    public class RabbitMqDelayedMessageTimeout : ITimeoutManager
     {
         private readonly IConnection connection;
         private readonly string exchangeName;
@@ -19,7 +19,7 @@ namespace Timeout.Sample
 
         private static object routingKeyBinder = new object();
 
-        public DelayedMessageExchangeTimeout(string endpoint, string queueToBind, string exchangeName)
+        public RabbitMqDelayedMessageTimeout(string endpoint, string queueToBind, string exchangeName)
         {
             this.exchangeName = exchangeName;
             this.queue = queueToBind;
@@ -105,11 +105,19 @@ namespace Timeout.Sample
         }
     }
 
-    public static class DelayedMessageExchangeConfigurationExtension
+    public static class RabbitMqDelayedMessageTimeoutConfigurationExtension
     {
+        /// <summary>
+        /// Use RabbitMq with delayed plugin
+        /// https://github.com/rabbitmq/rabbitmq-delayed-message-exchange
+        /// </summary>
+        /// <param name="configurer"></param>
+        /// <param name="endpoint">RabbitMq endpoint</param>
+        /// <param name="queueToBind">Queue to bind exchange</param>
+        /// <param name="exchangeName">Exchange delayed name</param>
         public static void UseRabbitMqDelayed(this StandardConfigurer<ITimeoutManager> configurer, string endpoint, string queueToBind, string exchangeName)
         {
-            configurer.Register(register => new DelayedMessageExchangeTimeout(endpoint, queueToBind, exchangeName));
+            configurer.Register(register => new RabbitMqDelayedMessageTimeout(endpoint, queueToBind, exchangeName));
         }
     }
 }
