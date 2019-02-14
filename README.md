@@ -1,1 +1,1 @@
-# Rebus RabbitMq delayed message exchange
+# Rebus with RabbitMq delayed message exchange
