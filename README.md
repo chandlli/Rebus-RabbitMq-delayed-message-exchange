@@ -1,6 +1,6 @@
 # Rebus with RabbitMq delayed message exchange plugin
 
-Two examples strategies to Rebus work together with plugin [RabbitMQ Delayed Message Plugin](https://github.com/rabbitmq/rabbitmq-delayed-message-exchange)
+Two strategies to Rebus work together with plugin [RabbitMQ Delayed Message Plugin](https://github.com/rabbitmq/rabbitmq-delayed-message-exchange)
 
 ## Getting Started
 
