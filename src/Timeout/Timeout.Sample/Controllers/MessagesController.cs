@@ -22,7 +22,7 @@ namespace Timeout.Sample.Controllers
         [HttpGet("happy")]
         public IActionResult HappyMessage()
         {
-            bus.Publish(new HappyMessage());
+            bus.Publish(new HappyMessage($"This is a happy message :) at {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}"));
 
             return Ok("Published happy message");
         }
@@ -30,7 +30,7 @@ namespace Timeout.Sample.Controllers
         [HttpGet("sad")]
         public IActionResult SadMessage()
         {
-            bus.Publish(new SadMessage());
+            bus.Publish(new SadMessage($"This is a sad message :( at {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}"));
 
             return Ok("Published sad message");
         }

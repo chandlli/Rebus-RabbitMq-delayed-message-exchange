@@ -7,7 +7,11 @@ namespace Timeout.Sample
 {
     public class SadMessage
     {
-        public string Message { get; } = "This is a sad message :(";
-        public DateTime Momment { get; } = DateTime.Now;
+        public string Message { get; }
+
+        public SadMessage(string message)
+        {
+            Message = message;
+        }    
     }
 }
