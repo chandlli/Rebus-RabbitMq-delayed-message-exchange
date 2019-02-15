@@ -9,6 +9,7 @@ Build `Dockerfile` in root folder or run command:
 ```
 docker run -p 5672:5672 -p 8080:15672 chandlli/rabbitmq-with-delayed-plugin:latest
 ```
+This image contains RabbitMQ Delayed Message Plugin
 
 RabbitMq UI exposed on `http://localhost:8080`
 
