@@ -1,6 +1,6 @@
 # Rebus with RabbitMq delayed message exchange plugin
 
-Two sample strategies to Rebus work together with plugin [RabbitMQ Delayed Message Plugin](https://github.com/rabbitmq/rabbitmq-delayed-message-exchange)
+Two examples strategies to Rebus work together with plugin [RabbitMQ Delayed Message Plugin](https://github.com/rabbitmq/rabbitmq-delayed-message-exchange)
 
 ## Getting Started
 
@@ -14,10 +14,10 @@ RabbitMq UI exposed on `http://localhost:8080`
 
 ## Strategies
 
-### Custom `ITimeoutManager`
+#### Custom `ITimeoutManager`
 
-[Code](https://github.com/chandlli/Rebus-RabbitMq-delayed-message-exchange/blob/master/src/Timeout/README.md)
+[Code](https://github.com/chandlli/Rebus-RabbitMq-delayed-message-exchange/blob/master/src/Timeout)
 
-### Custom `ITransport`
+##### Custom `ITransport`
 
 Working ...
