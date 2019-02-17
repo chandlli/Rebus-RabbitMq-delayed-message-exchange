@@ -34,8 +34,6 @@ namespace Timeout.Sample
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IBus bus)
         {
-            var types = GetType().Assembly.GetTypes();
-
             bus.Subscribe<HappyMessage>();
             bus.Subscribe<SadMessage>();
 
